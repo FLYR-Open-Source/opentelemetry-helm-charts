@@ -23,6 +23,46 @@ entries:
   opentelemetry-demo:
   - apiVersion: v2
     appVersion: 2.0.2
+    created: "2025-06-27T07:44:48.669004498Z"
+    dependencies:
+    - condition: opentelemetry-collector.enabled
+      name: opentelemetry-collector
+      repository: https://open-telemetry.github.io/opentelemetry-helm-charts
+      version: 0.117.1
+    - condition: jaeger.enabled
+      name: jaeger
+      repository: https://jaegertracing.github.io/helm-charts
+      version: 3.4.0
+    - condition: prometheus.enabled
+      name: prometheus
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 27.4.0
+    - condition: grafana.enabled
+      name: grafana
+      repository: https://grafana.github.io/helm-charts
+      version: 8.10.1
+    - condition: opensearch.enabled
+      name: opensearch
+      repository: https://opensearch-project.github.io/helm-charts
+      version: 2.31.0
+    description: opentelemetry demo helm chart
+    digest: 2d27af0bf703a5e688c4727088a1079dad939dab06b3aae8f26a5505b64b002d
+    home: https://opentelemetry.io/
+    icon: https://opentelemetry.io/img/logos/opentelemetry-logo-nav.png
+    maintainers:
+    - name: dmitryax
+    - name: jaronoff97
+    - name: puckpuck
+    - name: tylerhelmuth
+    name: opentelemetry-demo
+    sources:
+    - https://github.com/open-telemetry/opentelemetry-demo
+    type: application
+    urls:
+    - https://github.com/FLYR-Open-Source/opentelemetry-helm-charts/releases/download/opentelemetry-demo-0.37.3/opentelemetry-demo-0.37.3.tgz
+    version: 0.37.3
+  - apiVersion: v2
+    appVersion: 2.0.2
     created: "2025-06-27T07:00:00.867129915Z"
     dependencies:
     - condition: opentelemetry-collector.enabled
@@ -122,6 +162,47 @@ entries:
     - https://github.com/FLYR-Open-Source/opentelemetry-helm-charts/releases/download/opentelemetry-ebpf-0.1.6/opentelemetry-ebpf-0.1.6.tgz
     version: 0.1.6
   opentelemetry-kube-stack:
+  - apiVersion: v2
+    appVersion: 0.120.0
+    created: "2025-06-27T07:44:48.899516256Z"
+    dependencies:
+    - condition: crds.install,crds.installOtel
+      name: otel-crds
+      repository: ""
+      version: 0.0.0
+    - condition: crds.install,crds.installPrometheus
+      name: prometheus-crds
+      repository: ""
+      version: 0.0.0
+    - condition: opentelemetry-operator.enabled
+      name: opentelemetry-operator
+      repository: https://open-telemetry.github.io/opentelemetry-helm-charts
+      version: 0.84.2
+    - condition: kubeStateMetrics.enabled
+      name: kube-state-metrics
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 5.21.*
+    - condition: nodeExporter.enabled
+      name: prometheus-node-exporter
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 4.37.*
+    description: 'OpenTelemetry Quickstart chart for Kubernetes. Installs an operator
+      and collector for an easy way to get started with Kubernetes observability. '
+    digest: c46ca5550c01c46a759bbac075bc54a28611535b5a93c6ecabd62935549aab21
+    home: https://opentelemetry.io/
+    icon: https://raw.githubusercontent.com/cncf/artwork/a718fa97fffec1b9fd14147682e9e3ac0c8817cb/projects/opentelemetry/icon/color/opentelemetry-icon-color.png
+    maintainers:
+    - name: Allex1
+    - name: dmitryax
+    - name: jaronoff97
+    - name: TylerHelmuth
+    name: opentelemetry-kube-stack
+    sources:
+    - https://github.com/open-telemetry/opentelemetry-operator
+    type: application
+    urls:
+    - https://github.com/FLYR-Open-Source/opentelemetry-helm-charts/releases/download/opentelemetry-kube-stack-0.6.4/opentelemetry-kube-stack-0.6.4.tgz
+    version: 0.6.4
   - apiVersion: v2
     appVersion: 0.120.0
     created: "2025-06-27T07:00:01.085116366Z"
@@ -241,4 +322,4 @@ entries:
     urls:
     - https://github.com/FLYR-Open-Source/opentelemetry-helm-charts/releases/download/opentelemetry-target-allocator-0.126.1/opentelemetry-target-allocator-0.126.1.tgz
     version: 0.126.1
-generated: "2025-06-27T07:00:01.085129541Z"
+generated: "2025-06-27T07:44:48.899542345Z"

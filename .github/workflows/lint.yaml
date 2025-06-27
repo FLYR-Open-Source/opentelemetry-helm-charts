@@ -19,6 +19,10 @@ jobs:
           create-kind-cluster: "false"
           helm-version: "v3.14.4"
 
+      - name: print
+        run: |
+          echo "GITHUB_REPOSITORY: $GITHUB_REPOSITORY"
+
       - name: Run chart-testing (lint)
         run: "ct lint --target-branch main
           --chart-repos opentelemetry-collector=https://open-telemetry.github.io/opentelemetry-helm-charts

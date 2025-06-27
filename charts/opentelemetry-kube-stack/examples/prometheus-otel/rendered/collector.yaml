@@ -6,7 +6,7 @@ metadata:
   name: example-daemon
   namespace: default
   labels:
-    helm.sh/chart: opentelemetry-kube-stack-0.6.4
+    helm.sh/chart: opentelemetry-kube-stack-0.6.5
     app.kubernetes.io/version: "0.120.0"
     app.kubernetes.io/managed-by: Helm
     release: "example"    
@@ -71,13 +71,6 @@ spec:
   imagePullPolicy: IfNotPresent
   upgradeStrategy: automatic
   terminationGracePeriodSeconds: 30
-  resources:
-    limits:
-      cpu: 250m
-      memory: 128Mi
-    requests:
-      cpu: 250m
-      memory: 64Mi
   securityContext:
     {}
   targetAllocator:

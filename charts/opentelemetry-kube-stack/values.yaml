@@ -158,13 +158,8 @@ defaultCRConfig:
   terminationGracePeriodSeconds: 30
 
   # Resource requests and limits for the collector
-  resources:
-    requests:
-      memory: "64Mi"
-      cpu: "250m"
-    limits:
-      memory: "128Mi"
-      cpu: "250m"
+  # It is HIGHLY recommended to set resource limits.
+  resources: {}
 
   # Node selector for the collector
   nodeSelector: {}
@@ -461,6 +456,7 @@ collectors:
     suffix: daemon
     mode: daemonset
     enabled: true
+    # It is HIGHLY recommended to set resource limits.
     resources: {}
     # A scrape config file to instruct the daemon collector to pull metrics from any matching targets on the same node with
     # prometheus.io/scrape=true
